@@ -11,6 +11,11 @@ import org.springframework.test.context.junit4.SpringRunner;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.BDDMockito.given;
 
+
+//Using the Spring Test Context for Unit Testing
+// This allows us to use the @Autowired annotation to inject the MultiplicationService
+// and the @MockBean annotation to create a mock of the RandomGeneratorService
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class MultiplicationServiceTest {

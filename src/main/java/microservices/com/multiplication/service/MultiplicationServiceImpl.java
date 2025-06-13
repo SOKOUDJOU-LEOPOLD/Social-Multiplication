@@ -3,11 +3,18 @@ package microservices.com.multiplication.service;
 import microservices.com.multiplication.domain.Multiplication;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class MultiplicationServiceImpl implements MultiplicationService{
     
-    @Autowired
+    
     private RandomGeneratorService randomGeneratorService;
+
+    @Autowired
+    public MultiplicationServiceImpl(RandomGeneratorService randomGeneratorService) {
+        this.randomGeneratorService = randomGeneratorService;
+    }
 
 
 
@@ -19,4 +26,4 @@ public class MultiplicationServiceImpl implements MultiplicationService{
         return new Multiplication(factorA, factorB);
 
     }
-} 
+}
